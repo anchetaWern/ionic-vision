@@ -1,0 +1,22 @@
+<ion-view title="Notes" ng-controller="HomeController as home_ctrl">
+	<header class="bar bar-header bar-stable">
+		<h1 class="title">Ionic Vision</h1>
+	</header>
+
+	<ion-content class="has-header padding">
+		<img src="{{ home_ctrl.current_image }}" class="picture">
+    <h3 class="text-center" ng-show="home_ctrl.image_description">{{ home_ctrl.image_description }}</h3>
+    <label class="item item-input item-select">
+      <div class="input-label">
+        Detection Type
+      </div>
+      <select ng-model="home_ctrl.detection_type">
+        <option value="{{detection_type}}" ng-repeat="(detection_type, detection_type_value) in home_ctrl.detection_types">{{detection_type_value}}</option>
+      </select>
+    </label>
+    <button class="button button-positive button-block" ng-click="takePicture()">
+		Take Picture
+		</button>
+	</ion-content>
+
+</ion-view>
